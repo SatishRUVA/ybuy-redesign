@@ -1,0 +1,1009 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "startedAt": "2026-11-06T13:27:05.033Z",
+  "specification": {
+    "path": "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\candidate.json",
+    "sha256": "6ec69c6e89d270cf5c5ffd90c990feb2e6ab8bd1b5f172504d0b3194c48fe234",
+    "bytes": 3047
+  },
+  "artifact": {
+    "path": "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\ybuy-architecture.html",
+    "sha256": "f35d0fc0545dc7613079493281576664bb0cedcacd4957d299bfc6555cc9b411",
+    "bytes": 759282
+  },
+  "stages": {
+    "validate": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": null,
+      "execution": "embedded-in-deliver",
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "C:\\Users\\spulivarthy\\.agents\\skills\\archify\\bin\\archify.mjs",
+        "deliver",
+        "architecture",
+        "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\candidate.json",
+        "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\ybuy-architecture.html",
+        "--quality",
+        "showcase",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "validate",
+        "specification": {
+          "sha256": "6ec69c6e89d270cf5c5ffd90c990feb2e6ab8bd1b5f172504d0b3194c48fe234",
+          "bytes": 3047
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        }
+      }
+    },
+    "deliver": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 3787,
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "C:\\Users\\spulivarthy\\.agents\\skills\\archify\\bin\\archify.mjs",
+        "deliver",
+        "architecture",
+        "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\candidate.json",
+        "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\ybuy-architecture.html",
+        "--quality",
+        "showcase",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "receiptId": "d9d101c5-c0d1-454d-b7a2-a8d44ea77552",
+        "ok": true,
+        "command": "deliver",
+        "type": "architecture",
+        "input": "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\candidate.json",
+        "output": "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\ybuy-architecture.html",
+        "specification": {
+          "sha256": "6ec69c6e89d270cf5c5ffd90c990feb2e6ab8bd1b5f172504d0b3194c48fe234",
+          "bytes": 3047
+        },
+        "artifact": {
+          "sha256": "f35d0fc0545dc7613079493281576664bb0cedcacd4957d299bfc6555cc9b411",
+          "bytes": 759282
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        },
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      }
+    },
+    "check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 806,
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "C:\\Users\\spulivarthy\\.agents\\skills\\archify\\bin\\archify.mjs",
+        "check",
+        "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\ybuy-architecture.html",
+        "--require-provenance"
+      ],
+      "receipt": {
+        "ok": true,
+        "file": "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\ybuy-architecture.html",
+        "artifact": {
+          "sha256": "f35d0fc0545dc7613079493281576664bb0cedcacd4957d299bfc6555cc9b411",
+          "bytes": 759282
+        },
+        "checks": [
+          {
+            "name": "single_svg",
+            "ok": true,
+            "details": [
+              "found 1 <svg> block(s)"
+            ]
+          },
+          {
+            "name": "finite_svg",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "orthogonal_arrows",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "label_route_clearance",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_crossings",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_corridors",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "container_border_runs",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "route_rhythm",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "legend_clearance",
+            "ok": true,
+            "details": []
+          }
+        ],
+        "composition": {
+          "schemaVersion": 1,
+          "profile": "showcase",
+          "status": "pass",
+          "summary": {
+            "errors": 0,
+            "warnings": 0
+          },
+          "metrics": {
+            "properCrossings": 0,
+            "resolvedCrossovers": 0,
+            "ambiguousCorridors": 0,
+            "arrowheadCollisions": 0,
+            "containerBorderRuns": 0,
+            "labelRouteClearanceIssues": 0,
+            "labelCanvasOverflowIssues": 0,
+            "minLabelRouteClearance": 45,
+            "desktopReadabilityIssues": 0,
+            "viewportHeightIssues": 0,
+            "minProjectedNodeTextPx": 6.323489932885906,
+            "maxBends": 4,
+            "routesOverSuggestedBends": 2,
+            "maxStretch": 1.256,
+            "routesOverSuggestedStretch": 0,
+            "minSegmentPx": 16,
+            "minInteriorSegmentPx": 16,
+            "shortSegmentCount": 0,
+            "shortEndpointSegmentCount": 0,
+            "shortInteriorSegmentCount": 0,
+            "microSegmentCount": 0
+          },
+          "suggestedLimits": {
+            "bendsPerRelationship": 2,
+            "stretch": 1.35,
+            "segmentPx": 16,
+            "microSegmentPx": 8
+          },
+          "routeReview": {
+            "crossings": [],
+            "detours": [
+              {
+                "relationship": {
+                  "id": "edge-functions-to-stripe",
+                  "from": "edge_functions",
+                  "to": "stripe",
+                  "label": "create checkout",
+                  "collectionIndex": 7,
+                  "artifactIndex": 8
+                },
+                "bends": 4,
+                "stretch": 1.256
+              },
+              {
+                "relationship": {
+                  "id": "stripe-to-edge-functions",
+                  "from": "stripe",
+                  "to": "edge_functions",
+                  "label": "signed webhook",
+                  "collectionIndex": 8,
+                  "artifactIndex": 9
+                },
+                "bends": 4,
+                "stretch": 1.256
+              }
+            ]
+          },
+          "leadingSpace": {
+            "measured": true,
+            "emptyTopPx": 75,
+            "emptyTopRatio": 0.11,
+            "occupiedTop": 75,
+            "viewBoxTop": 0,
+            "canvasHeight": 680,
+            "typicalNodeHeight": 78,
+            "reviewSuggested": false
+          },
+          "desktopReadability": {
+            "budgetBasis": "recognized-declared-wide",
+            "readerContract": "declared-wide-v1",
+            "availableDiagramWidth": 1346,
+            "actualBudgetPx": 1346,
+            "actualReaderWidth": 1376,
+            "desiredReaderWidth": 1520,
+            "viewportCap": 1376,
+            "limit": "viewport-cap",
+            "requestedTargetPx": 7.5,
+            "requestedTargetMet": false,
+            "hardFloorPx": 6,
+            "hardFloorMet": true,
+            "minimumOwner": {
+              "kind": "node",
+              "id": "react_app"
+            },
+            "minimumSourceTextPx": 7,
+            "minimumProjectedTextPx": 6.323489932885906,
+            "semanticTextCount": 23
+          },
+          "issues": []
+        },
+        "provenance": "current",
+        "deliveryReceiptId": "d9d101c5-c0d1-454d-b7a2-a8d44ea77552"
+      }
+    },
+    "browser-check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 4186,
+      "command": [
+        "C:\\nvm4w\\nodejs\\node.exe",
+        "C:\\Users\\spulivarthy\\.agents\\skills\\archify\\bin\\archify.mjs",
+        "browser-check",
+        "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\ybuy-architecture.html",
+        "--json",
+        "--require-provenance"
+      ],
+      "execution": "in-process",
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "browser-check",
+        "evidenceKind": "automated-browser",
+        "status": "pass",
+        "visualReview": "not-requested",
+        "provenance": "current",
+        "deliveryReceiptId": "d9d101c5-c0d1-454d-b7a2-a8d44ea77552",
+        "artifact": {
+          "path": "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\ybuy-architecture.html",
+          "sha256": "f35d0fc0545dc7613079493281576664bb0cedcacd4957d299bfc6555cc9b411",
+          "bytes": 759282
+        },
+        "state": {
+          "detail": "read",
+          "motion": "still"
+        },
+        "chrome": {
+          "status": "available",
+          "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+        },
+        "diagnostics": [],
+        "containment": {
+          "status": "pass",
+          "policy": "fit-or-reader-declared-readable-vertical-scroll",
+          "viewports": [
+            {
+              "width": 1440,
+              "height": 900,
+              "theme": "light",
+              "innerWidth": 1440,
+              "innerHeight": 900,
+              "scrollWidth": 1440,
+              "scrollHeight": 900,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1376,
+              "diagramWidth": 1346,
+              "pageComposition": {
+                "bodyPaddingPx": 12,
+                "headerPx": 52,
+                "diagramChromePx": 78,
+                "svgPx": 614,
+                "cardsPx": 0,
+                "viewBoxHeight": 680
+              },
+              "viewBoxWidth": 1490,
+              "minimumProjectedNodeTextPx": 6.323489932885906,
+              "minimumProjectedNonEdgeTextPx": 6.323489932885906,
+              "minimumProjectedEdgeTextPx": 7.226845637583892,
+              "minimumProjectedNodeText": "Redesign default; main/admin variants selectable",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "react_app"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1600,
+              "height": 1000,
+              "theme": "light",
+              "innerWidth": 1600,
+              "innerHeight": 1000,
+              "scrollWidth": 1600,
+              "scrollHeight": 1000,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1536,
+              "diagramWidth": 1506,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 60,
+                "diagramChromePx": 84,
+                "svgPx": 687,
+                "cardsPx": 0,
+                "viewBoxHeight": 680
+              },
+              "viewBoxWidth": 1490,
+              "minimumProjectedNodeTextPx": 7,
+              "minimumProjectedNonEdgeTextPx": 7,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Redesign default; main/admin variants selectable",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "react_app"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1920,
+              "height": 1080,
+              "theme": "light",
+              "innerWidth": 1920,
+              "innerHeight": 1080,
+              "scrollWidth": 1920,
+              "scrollHeight": 1080,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1856,
+              "diagramWidth": 1826,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 60,
+                "diagramChromePx": 84,
+                "svgPx": 833,
+                "cardsPx": 0,
+                "viewBoxHeight": 680
+              },
+              "viewBoxWidth": 1490,
+              "minimumProjectedNodeTextPx": 7,
+              "minimumProjectedNonEdgeTextPx": 7,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Redesign default; main/admin variants selectable",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "react_app"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "theme": "light",
+              "innerWidth": 2048,
+              "innerHeight": 1320,
+              "scrollWidth": 2048,
+              "scrollHeight": 1320,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1920,
+              "diagramWidth": 1870,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 68,
+                "diagramChromePx": 94,
+                "svgPx": 853,
+                "cardsPx": 0,
+                "viewBoxHeight": 680
+              },
+              "viewBoxWidth": 1490,
+              "minimumProjectedNodeTextPx": 7,
+              "minimumProjectedNonEdgeTextPx": 7,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Redesign default; main/admin variants selectable",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "react_app"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 44,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            }
+          ]
+        },
+        "themeStates": {
+          "status": "pass",
+          "viewports": [
+            {
+              "width": 1440,
+              "height": 900,
+              "requestedTheme": "light",
+              "resolvedTheme": "light",
+              "ok": true
+            },
+            {
+              "width": 1600,
+              "height": 1000,
+              "requestedTheme": "light",
+              "resolvedTheme": "light",
+              "ok": true
+            },
+            {
+              "width": 1920,
+              "height": 1080,
+              "requestedTheme": "light",
+              "resolvedTheme": "light",
+              "ok": true
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "requestedTheme": "light",
+              "resolvedTheme": "light",
+              "ok": true
+            },
+            {
+              "width": 1440,
+              "height": 900,
+              "requestedTheme": "dark",
+              "resolvedTheme": "dark",
+              "ok": true
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "requestedTheme": "dark",
+              "resolvedTheme": "dark",
+              "ok": true
+            }
+          ]
+        },
+        "readability": {
+          "status": "pass",
+          "minimumProjectedNodeTextPx": 6,
+          "viewports": [
+            {
+              "width": 1440,
+              "height": 900,
+              "theme": "light",
+              "innerWidth": 1440,
+              "innerHeight": 900,
+              "scrollWidth": 1440,
+              "scrollHeight": 900,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1376,
+              "diagramWidth": 1346,
+              "pageComposition": {
+                "bodyPaddingPx": 12,
+                "headerPx": 52,
+                "diagramChromePx": 78,
+                "svgPx": 614,
+                "cardsPx": 0,
+                "viewBoxHeight": 680
+              },
+              "viewBoxWidth": 1490,
+              "minimumProjectedNodeTextPx": 6.323489932885906,
+              "minimumProjectedNonEdgeTextPx": 6.323489932885906,
+              "minimumProjectedEdgeTextPx": 7.226845637583892,
+              "minimumProjectedNodeText": "Redesign default; main/admin variants selectable",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "react_app"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1600,
+              "height": 1000,
+              "theme": "light",
+              "innerWidth": 1600,
+              "innerHeight": 1000,
+              "scrollWidth": 1600,
+              "scrollHeight": 1000,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1536,
+              "diagramWidth": 1506,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 60,
+                "diagramChromePx": 84,
+                "svgPx": 687,
+                "cardsPx": 0,
+                "viewBoxHeight": 680
+              },
+              "viewBoxWidth": 1490,
+              "minimumProjectedNodeTextPx": 7,
+              "minimumProjectedNonEdgeTextPx": 7,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Redesign default; main/admin variants selectable",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "react_app"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1920,
+              "height": 1080,
+              "theme": "light",
+              "innerWidth": 1920,
+              "innerHeight": 1080,
+              "scrollWidth": 1920,
+              "scrollHeight": 1080,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1856,
+              "diagramWidth": 1826,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 60,
+                "diagramChromePx": 84,
+                "svgPx": 833,
+                "cardsPx": 0,
+                "viewBoxHeight": 680
+              },
+              "viewBoxWidth": 1490,
+              "minimumProjectedNodeTextPx": 7,
+              "minimumProjectedNonEdgeTextPx": 7,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Redesign default; main/admin variants selectable",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "react_app"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "theme": "light",
+              "innerWidth": 2048,
+              "innerHeight": 1320,
+              "scrollWidth": 2048,
+              "scrollHeight": 1320,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1920,
+              "diagramWidth": 1870,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 68,
+                "diagramChromePx": 94,
+                "svgPx": 853,
+                "cardsPx": 0,
+                "viewBoxHeight": 680
+              },
+              "viewBoxWidth": 1490,
+              "minimumProjectedNodeTextPx": 7,
+              "minimumProjectedNonEdgeTextPx": 7,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Redesign default; main/admin variants selectable",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "react_app"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 44,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            }
+          ]
+        },
+        "viewerChrome": {
+          "status": "pass",
+          "viewports": [
+            {
+              "width": 1440,
+              "height": 900,
+              "theme": "light",
+              "innerWidth": 1440,
+              "innerHeight": 900,
+              "scrollWidth": 1440,
+              "scrollHeight": 900,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1376,
+              "diagramWidth": 1346,
+              "pageComposition": {
+                "bodyPaddingPx": 12,
+                "headerPx": 52,
+                "diagramChromePx": 78,
+                "svgPx": 614,
+                "cardsPx": 0,
+                "viewBoxHeight": 680
+              },
+              "viewBoxWidth": 1490,
+              "minimumProjectedNodeTextPx": 6.323489932885906,
+              "minimumProjectedNonEdgeTextPx": 6.323489932885906,
+              "minimumProjectedEdgeTextPx": 7.226845637583892,
+              "minimumProjectedNodeText": "Redesign default; main/admin variants selectable",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "react_app"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1600,
+              "height": 1000,
+              "theme": "light",
+              "innerWidth": 1600,
+              "innerHeight": 1000,
+              "scrollWidth": 1600,
+              "scrollHeight": 1000,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1536,
+              "diagramWidth": 1506,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 60,
+                "diagramChromePx": 84,
+                "svgPx": 687,
+                "cardsPx": 0,
+                "viewBoxHeight": 680
+              },
+              "viewBoxWidth": 1490,
+              "minimumProjectedNodeTextPx": 7,
+              "minimumProjectedNonEdgeTextPx": 7,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Redesign default; main/admin variants selectable",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "react_app"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 1920,
+              "height": 1080,
+              "theme": "light",
+              "innerWidth": 1920,
+              "innerHeight": 1080,
+              "scrollWidth": 1920,
+              "scrollHeight": 1080,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1856,
+              "diagramWidth": 1826,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 60,
+                "diagramChromePx": 84,
+                "svgPx": 833,
+                "cardsPx": 0,
+                "viewBoxHeight": 680
+              },
+              "viewBoxWidth": 1490,
+              "minimumProjectedNodeTextPx": 7,
+              "minimumProjectedNonEdgeTextPx": 7,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Redesign default; main/admin variants selectable",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "react_app"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 54,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            },
+            {
+              "width": 2048,
+              "height": 1320,
+              "theme": "light",
+              "innerWidth": 2048,
+              "innerHeight": 1320,
+              "scrollWidth": 2048,
+              "scrollHeight": 1320,
+              "overflowX": false,
+              "overflowY": false,
+              "verticalScrollAccepted": false,
+              "overflowDisposition": "contained",
+              "readerLayout": "adaptive",
+              "readerOverflow": null,
+              "readerFit": "intrinsic-height",
+              "ok": true,
+              "readerWidth": 1920,
+              "diagramWidth": 1870,
+              "pageComposition": {
+                "bodyPaddingPx": 64,
+                "headerPx": 68,
+                "diagramChromePx": 94,
+                "svgPx": 853,
+                "cardsPx": 0,
+                "viewBoxHeight": 680
+              },
+              "viewBoxWidth": 1490,
+              "minimumProjectedNodeTextPx": 7,
+              "minimumProjectedNonEdgeTextPx": 7,
+              "minimumProjectedEdgeTextPx": 8,
+              "minimumProjectedNodeText": "Redesign default; main/admin variants selectable",
+              "minimumProjectedNodeTextDetail": "context",
+              "minimumProjectedNodeTextOwner": {
+                "kind": "node",
+                "id": "react_app"
+              },
+              "minimumRequiredNodeTextPx": 6,
+              "readabilityOk": true,
+              "hasLegend": true,
+              "hasNavigationDock": true,
+              "legendDockIntersectionArea": 0,
+              "dockStageIntersectionArea": 0,
+              "dockStageGap": 10,
+              "requiredDockStageGap": 10,
+              "viewerChromeStageOk": true,
+              "viewerChromeReserve": 44,
+              "viewerChromeActive": true,
+              "viewerChromeOk": true,
+              "resolvedTheme": "light"
+            }
+          ]
+        },
+        "captures": {
+          "status": "not-requested",
+          "screenshots": [],
+          "contactSheet": null
+        },
+        "sidecars": {
+          "receipt": "ybuy-architecture.browser-check.json",
+          "files": []
+        }
+      }
+    }
+  },
+  "diagnostics": [],
+  "evidence": {
+    "receipt": "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\ybuy-architecture.finalize.json",
+    "summaryReceipt": "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\ybuy-architecture.finalize-summary.json",
+    "browserCheckReceipt": "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\ybuy-architecture.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "finishedAt": "2026-11-06T13:27:15.610Z",
+  "durationMs": 10577,
+  "update": {
+    "status": "update_available",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.2.0",
+    "releaseNotes": "https://github.com/tt-a1i/archify/releases/tag/v3.2.0",
+    "severity": "normal",
+    "checkedAt": "2026-11-06T13:25:50.828Z",
+    "source": "cache",
+    "noticeRequired": true,
+    "noticeText": "Archify update: 3.0.1 → 3.2.0. A previous check at 2026-11-06T13:25:50.828Z found a newer release. Release notes: https://github.com/tt-a1i/archify/releases/tag/v3.2.0. The installed Skill has not changed; ask to snooze or ignore this reminder.",
+    "eventKey": "archify@sha256:70e210265c59f24dcbdf2a502ff671104b5454e7ee7d3554aecd86bad32384f5"
+  }
+}

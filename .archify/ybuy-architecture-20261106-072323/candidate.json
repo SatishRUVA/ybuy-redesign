@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "YBuy Application Architecture",
+    "output": ".archify/ybuy-architecture-20261106-072323/ybuy-architecture.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "browser",
+      "type": "external",
+      "label": "Browser user",
+      "sublabel": "Marketplace and account workflows",
+      "pos": [40, 280],
+      "size": [150, 68]
+    },
+    {
+      "id": "vercel",
+      "type": "cloud",
+      "label": "Vercel build target",
+      "sublabel": "Vite dist output; SPA rewrite",
+      "pos": [270, 280],
+      "size": [180, 78]
+    },
+    {
+      "id": "react_app",
+      "type": "frontend",
+      "label": "React application",
+      "sublabel": "Redesign default; main/admin variants selectable",
+      "pos": [580, 280],
+      "size": [210, 88]
+    },
+    {
+      "id": "supabase",
+      "type": "cloud",
+      "label": "Supabase project",
+      "sublabel": "Auth and Postgres data via REST/RPC",
+      "pos": [950, 280],
+      "size": [210, 88]
+    },
+    {
+      "id": "vercel_api",
+      "type": "backend",
+      "label": "Vercel middleware and APIs",
+      "sublabel": "Access gate; optional profile routes",
+      "pos": [580, 75],
+      "size": [210, 78]
+    },
+    {
+      "id": "edge_functions",
+      "type": "backend",
+      "label": "Supabase Edge Functions",
+      "sublabel": "Checkout and payment-event handlers",
+      "pos": [950, 500],
+      "size": [210, 82]
+    },
+    {
+      "id": "stripe",
+      "type": "external",
+      "label": "Stripe",
+      "sublabel": "Checkout and signed event delivery",
+      "pos": [1280, 505],
+      "size": [170, 72]
+    }
+  ],
+  "connections": [
+    { "id": "browser-to-vercel", "from": "browser", "to": "vercel", "label": "loads SPA" },
+    { "id": "vercel-to-react", "from": "vercel", "to": "react_app", "label": "serves built bundle" },
+    { "id": "react-to-supabase", "from": "react_app", "to": "supabase", "label": "Auth, REST and RPC" },
+    { "id": "react-to-vercel-api", "from": "react_app", "to": "vercel_api", "label": "conditional /api profile and access calls", "variant": "dashed", "fromSide": "top", "toSide": "bottom" },
+    { "id": "vercel-api-to-supabase", "from": "vercel_api", "to": "supabase", "label": "server-side profile operations", "variant": "dashed", "fromSide": "right", "toSide": "top" },
+    { "id": "react-to-edge-functions", "from": "react_app", "to": "edge_functions", "label": "invokes checkout", "fromSide": "bottom", "toSide": "left" },
+    { "id": "edge-functions-to-supabase", "from": "edge_functions", "to": "supabase", "label": "booking checks and RPC writes", "fromSide": "top", "toSide": "bottom" },
+    { "id": "edge-functions-to-stripe", "from": "edge_functions", "to": "stripe", "label": "create checkout", "labelDy": -40 },
+    { "id": "stripe-to-edge-functions", "from": "stripe", "to": "edge_functions", "label": "signed webhook", "labelDy": 64 }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "1faaa2d5-15d0-4a47-9884-d9af1e410ea0",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\candidate.json",
+  "output": "D:\\gigs-workspace\\YBuy\\redesign-v1\\.archify\\ybuy-architecture-20261106-072323\\ybuy-architecture.html",
+  "specification": {
+    "sha256": "0244205b2cf1fbe7d5562620a01588cd7afe2dbb90322e13dd01c6029b803d3c",
+    "bytes": 3047
+  },
+  "artifact": {
+    "sha256": "80b9abb6d2184dd0ded41dbbb5180bf2cecd404e785baa238b562886d946ed2e",
+    "bytes": 758710
+  }
+}
