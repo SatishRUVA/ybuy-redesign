@@ -76,6 +76,7 @@ export function BiddingTicker() {
   const demoOffers = mockBidding && !error && rows !== null && liveOffers.length === 0 ? createDemoOffers(now) : [];
   const offers = liveOffers.length ? liveOffers : demoOffers;
   const isDemoFeed = liveOffers.length === 0 && demoOffers.length > 0;
+  const emptyFeed = rows !== null && offers.length === 0 && !error;
 
   useEffect(() => {
     if (!enabled) return;
@@ -110,7 +111,7 @@ export function BiddingTicker() {
 
   if (!enabled) return null;
   return (
-    <section aria-label="Live bidding auctions" className={`bid-banner${motionStopped ? ' bid-banner-stopped' : ''}${collapsed ? ' bid-banner-collapsed' : ''}`}>
+    <section aria-label="Live bidding auctions" className={`bid-banner${emptyFeed ? ' bid-banner-empty' : ''}${motionStopped ? ' bid-banner-stopped' : ''}${collapsed ? ' bid-banner-collapsed' : ''}`}>
       <div id={contentId} className="bid-banner-inner" hidden={collapsed}>
         {error ? (
           <div className="bid-banner-error">

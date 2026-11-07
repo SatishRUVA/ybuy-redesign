@@ -69,7 +69,7 @@ export function SearchBar({ onSearch, onLocationChange, variant = 'hero', defaul
   const [showLocMenu, setShowLocMenu] = useState(false);
   // On small screens the compact variant starts as a one-line summary and expands on tap,
   // so the search page keeps its results above the fold.
-  const [mobileExpanded, setMobileExpanded] = useState(variant === 'hero');
+  const [mobileExpanded, setMobileExpanded] = useState(false);
   const reduceMotion = useReducedMotion();
   const desktopLocRef = useRef<HTMLDivElement>(null);
   const mobileLocRef = useRef<HTMLDivElement>(null);
@@ -427,7 +427,7 @@ export function SearchBar({ onSearch, onLocationChange, variant = 'hero', defaul
         )}
         </AnimatePresence>
       </div>
-      <p role={initialLocationStatus === 'locating' ? 'status' : undefined} className={`mt-2 text-xs ${variant === 'compact' && !mobileExpanded ? 'hidden sm:block' : ''} ${variant === 'hero' ? 'text-white/90' : 'text-sec'}`}>
+      <p role={initialLocationStatus === 'locating' ? 'status' : undefined} className={`mt-2 text-xs ${!mobileExpanded ? 'hidden sm:block' : ''} text-sec`}>
         {initialLocationStatus === 'locating' && location.source === 'NONE'
           ? 'Finding your area… You can still search while we check.'
           : location.source === 'IP'

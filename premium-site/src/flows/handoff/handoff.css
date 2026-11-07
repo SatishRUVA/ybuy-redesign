@@ -1,0 +1,131 @@
+@layer components {
+  .handoff-page { --handoff-soft: #f3f6f0; --handoff-border: #b7c4b8; --handoff-success: #24594b; padding-bottom: 120px; }
+  .handoff-page .control { font-size: 16px; }
+  .handoff-page .flow-main { gap: 24px; }
+  .handoff-stepper { display: flex; padding: 0; list-style: none; margin: 0 0 2px; }
+  .handoff-stepper li { flex: 1; position: relative; display: grid; justify-items: center; gap: 8px; color: var(--muted); }
+  .handoff-stepper li::after { content: ''; position: absolute; top: 17px; left: calc(50% + 24px); right: calc(-50% + 24px); height: 1px; background: var(--line); }
+  .handoff-stepper li:last-child::after { display: none; }
+  .handoff-stepper li > span { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid var(--handoff-border); border-radius: 50%; font-size: 12px; background: #fff; }
+  .handoff-stepper small { font-size: 11px; }
+  .handoff-stepper .is-current { color: var(--accent); font-weight: 650; }
+  .handoff-stepper .is-current > span { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 0 0 5px #edf3eb; }
+  .handoff-stepper .is-done > span { background: #e6eee2; border-color: #e6eee2; color: var(--accent); }
+  .handoff-stepper .is-done::after { background: var(--accent); }
+  .handoff-step-heading { margin-top: 6px; }
+  .handoff-step-heading > span { font-size: 11px; color: var(--accent); font-weight: 600; }
+  .handoff-step-heading h2 { font-size: clamp(24px, 3vw, 32px); line-height: 1.15; letter-spacing: -.045em; margin: 8px 0 12px; }
+  .handoff-step-heading h2:focus { outline: none; }
+  .handoff-step-heading p { color: var(--muted); font-size: 14px; line-height: 1.6; }
+  .handoff-section-line { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .handoff-section-line h2, .handoff-section-line h3 { font-size: 17px; letter-spacing: -.025em; }
+  .handoff-section-line > span:not(.pill) { font-size: 11px; color: var(--muted); text-align: right; }
+  .handoff-meeting { display: grid; gap: 24px; }
+  .handoff-plan-row { display: flex; align-items: flex-start; gap: 14px; }
+  .handoff-plan-row > svg { color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+  .handoff-plan-row strong { display: block; font-size: 15px; line-height: 1.45; }
+  .handoff-plan-row span { display: block; font-size: 13px; color: var(--muted); margin-top: 6px; line-height: 1.6; }
+  .handoff-page .notice-banner p { margin-top: 5px; }
+  .handoff-page .notice-banner .text-button { display: inline-flex; gap: 5px; align-items: center; min-height: 44px; margin-top: 4px; }
+  .handoff-arrived { display: flex; align-items: center; gap: 16px; width: 100%; padding: 22px 18px; border: 1px solid var(--handoff-border); border-radius: 18px; color: var(--accent); text-align: left; transition: background .35s var(--ease), border-color .35s var(--ease); }
+  .handoff-arrived > span { display: grid; gap: 5px; flex: 1; }
+  .handoff-arrived strong { font-size: 17px; letter-spacing: -.02em; }
+  .handoff-arrived small { color: var(--muted); font-size: 12px; line-height: 1.5; }
+  .handoff-arrived.is-arrived { background: var(--handoff-soft); border-color: var(--accent); }
+  .handoff-verification { display: grid; justify-items: center; gap: 22px; }
+  .handoff-code-tabs { display: flex; gap: 8px; width: 100%; }
+  .handoff-code-tabs button { flex: 1; min-height: 48px; font-size: 12px; }
+  .handoff-code-tabs .is-active { border-color: var(--accent); color: var(--accent); background: var(--handoff-soft); }
+  .handoff-pattern { display: block; width: 180px; height: 180px; color: var(--ink); margin-top: 4px; }
+  .handoff-code { display: flex; gap: 7px; }
+  .handoff-code > span { display: grid; place-items: center; width: 35px; height: 48px; font-size: 23px; font-weight: 600; background: var(--handoff-soft); border-radius: 9px; font-variant-numeric: tabular-nums; }
+  .handoff-verification > p { font-size: 13px; text-align: center; color: var(--muted); line-height: 1.6; }
+  .handoff-verification > .field { width: 100%; }
+  .handoff-code-input { text-align: center; letter-spacing: .3em; font-size: 24px !important; height: 64px; font-variant-numeric: tabular-nums; }
+  .handoff-verification .handoff-success { display: flex; gap: 7px; align-items: center; color: var(--handoff-success); }
+  .handoff-inspect { display: grid; gap: 28px; }
+  .handoff-checklist h3 { font-size: 18px; letter-spacing: -.03em; margin-bottom: 8px; }
+  .handoff-checklist > p, .handoff-photos > p { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
+  .handoff-check-item { display: flex; align-items: center; gap: 14px; min-height: 60px; padding-block: 12px; border-bottom: 1px solid var(--line); font-size: 15px; cursor: pointer; }
+  .handoff-check-item input, .handoff-signature input, .handoff-return-item input { width: 22px; height: 22px; accent-color: var(--accent); flex-shrink: 0; }
+  .handoff-return-item { min-width: 0; border: 0; padding: 14px 0 18px; border-bottom: 1px solid var(--line); }
+  .handoff-return-item legend { font-size: 14px; font-weight: 550; padding-top: 14px; }
+  .handoff-return-item > div { display: flex; gap: 12px; }
+  .handoff-return-item label { display: flex; gap: 8px; align-items: center; min-height: 48px; font-size: 12px; flex: 1; cursor: pointer; }
+  .handoff-photos .handoff-section-line { margin-bottom: 8px; }
+  .handoff-photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .handoff-photo { min-width: 0; position: relative; aspect-ratio: 1.15; }
+  .handoff-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
+  .handoff-photo > a { display: block; width: 100%; height: 100%; }
+  .handoff-photo button { position: absolute; right: 3px; top: 3px; background: #fff; border: 1px solid var(--line); }
+  .handoff-add-photo { position: relative; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; border: 1px dashed #7b8d7f; border-radius: 14px; background: var(--handoff-soft); color: var(--accent); min-height: 130px; aspect-ratio: 1.15; overflow: hidden; }
+  .handoff-add-photo > span { font-size: 12px; font-weight: 550; }
+  .handoff-add-photo input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+  .handoff-add-photo:focus-within { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .handoff-add-photo--busy { opacity: .6; }
+  .handoff-photos > .form-disclaimer { margin: 12px 0 0; text-align: left; }
+  .handoff-damage .handoff-check-item { border: 0; }
+  .handoff-summary { display: grid; gap: 22px; }
+  .handoff-summary > svg { color: var(--accent); }
+  .handoff-summary h3 { font-size: 20px; letter-spacing: -.035em; }
+  .handoff-summary .kv { font-size: 13px; line-height: 1.5; }
+  .handoff-summary .kv dt { min-width: 100px; }
+  .handoff-summary .kv dd { max-width: 60%; overflow-wrap: anywhere; }
+  .handoff-saved-notes { padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; line-height: 1.7; }
+  .handoff-saved-notes p { color: var(--muted); margin-top: 5px; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .handoff-preview-photos { display: flex; gap: 10px; overflow-x: auto; }
+  .handoff-preview-photos img { width: 72px; height: 72px; border-radius: 12px; object-fit: cover; }
+  .handoff-signature { display: flex; align-items: flex-start; gap: 14px; cursor: pointer; }
+  .handoff-signature input { margin-top: 4px; }
+  .handoff-signature > span { display: grid; gap: 10px; }
+  .handoff-signature strong { font-size: 15px; line-height: 1.6; }
+  .handoff-signature span > span { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .handoff-signature em { font: italic 27px Georgia, serif; color: var(--accent); padding-top: 6px; }
+  .handoff-owner-confirm { display: grid; gap: 18px; text-align: center; }
+  .handoff-confirm-icon { display: grid; place-items: center; width: 80px; height: 80px; border-radius: 24px; background: var(--handoff-soft); margin: 4px auto; color: var(--accent); }
+  .handoff-owner-confirm h3 { font-size: 22px; letter-spacing: -.035em; }
+  .handoff-owner-confirm > p { color: var(--muted); line-height: 1.7; font-size: 13px; }
+  .handoff-owner-confirm .field { text-align: left; }
+  .handoff-or { color: var(--muted); font-size: 12px; }
+  .handoff-owner-confirm .notice-banner { text-align: left; display: block; }
+  .handoff-owner-confirm .notice-banner a { text-decoration: underline; }
+  .handoff-owner-confirm button:disabled { opacity: .5; cursor: default; }
+  .handoff-done { text-align: center; display: grid; justify-items: center; gap: 18px; }
+  .handoff-done-icon { display: grid; place-items: center; width: 84px; height: 84px; border-radius: 50%; background: #e9f1e4; color: var(--accent); }
+  .handoff-done h3 { font-size: 26px; letter-spacing: -.045em; }
+  .handoff-done > p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  .handoff-deposit { width: 100%; padding-top: 20px; border-top: 1px solid var(--line); margin-top: 10px; text-align: left; }
+  .handoff-deposit h4 { font-size: 15px; margin-bottom: 20px; }
+  .handoff-deposit .timeline { margin: 0; padding-left: 0; }
+  .handoff-deposit .timeline li { display: grid; gap: 6px; padding-bottom: 22px; font-size: 13px; }
+  .handoff-deposit .timeline span { color: var(--muted); line-height: 1.6; }
+  .handoff-review { display: grid; gap: 12px; }
+  .handoff-review h3 { font-size: 20px; letter-spacing: -.03em; }
+  .handoff-review p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .handoff-review a { margin-top: 8px; }
+  .handoff-trip-card { display: grid; justify-items: start; gap: 16px; }
+  .handoff-trip-card h2 { font-size: 23px; line-height: 1.2; letter-spacing: -.04em; }
+  .handoff-trip-card > p { color: var(--muted); font-size: 13px; }
+  .handoff-trip-card dl { width: 100%; padding-top: 18px; border-top: 1px solid var(--line); margin-top: 2px; }
+  .handoff-trip-card > .text-button { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; }
+  .handoff-help { display: flex; gap: 12px; padding: 10px 8px; color: var(--accent); }
+  .handoff-help svg { flex-shrink: 0; }
+  .handoff-help p { font-size: 13px; line-height: 1.7; }
+  .handoff-help a { text-decoration: underline; }
+  .handoff-cta { z-index: 45; background: rgba(255,255,255,.97); }
+  .handoff-cta > div { display: flex; gap: 8px; align-items: center; color: var(--muted); font-size: 11px; }
+  .handoff-cta .primary-button { min-height: 52px; flex-shrink: 0; gap: 10px; }
+  .handoff-cta > div > svg { display: none; }
+  .handoff-page :is(button, a, input):focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  @media (max-width: 640px) { .handoff-page { padding-bottom: 120px; } .handoff-cta > div > span { display: none; } .handoff-cta .primary-button { flex: 1; } .handoff-photo-grid { gap: 10px; } }
+  @media (min-width: 768px) { .handoff-photo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (min-width: 1024px) { .handoff-page .flow-body { grid-template-columns: minmax(0, 1fr) 340px; } .handoff-cta { position: static; padding: 20px 0 0; border-top: 1px solid var(--line); display: flex; justify-content: space-between; } .handoff-cta > div > svg { display: block; } }
+  @media (prefers-reduced-motion: reduce) { .handoff-arrived { transition: none; } }
+}
+@layer components {
+  .handoff-cta { position: fixed; inset: auto 0 0; margin: 0; padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom)); }
+  .handoff-deposit .timeline li { grid-template-columns: 1fr; padding-left: 28px; }
+  .handoff-deposit .timeline li::before { left: 6px; top: 16px; }
+  .handoff-deposit .timeline li::after { content: ''; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); position: absolute; left: 1px; top: 4px; }
+  @media (min-width: 1024px) { .handoff-cta { position: static; padding: 20px 0 0; } }
+}

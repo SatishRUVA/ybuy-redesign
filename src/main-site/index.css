@@ -771,6 +771,8 @@ a.bid-card:hover { background: var(--bg-card); border-color: var(--border-strong
   .bid-banner-live { font-size: 9px; gap: 6px; }
   .bid-banner-heading h2 { font-size: 14px; }
   .bid-banner-subtitle { font-size: 9px; }
+  .bid-banner-empty .bid-banner-inner { height: 80px; }
+  .bid-banner-empty .bid-banner-sleeve { height: 80px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .bid-banner .bid-banner-track { animation: none; transform: none; min-width: 0; width: max-content; }

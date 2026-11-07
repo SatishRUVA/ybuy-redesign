@@ -60,7 +60,7 @@ export default defineConfig(({ command, mode, isPreview }) => {
       port: Number(process.env.YBUY_TEST_PORT ?? 5174),
       strictPort: true,
       watch: {
-        ignored: ['**/node_modules/**', '**/test-results*/**', '**/playwright-report*/**'],
+        ignored: ['**/node_modules/**', '**/test-results*/**', '**/playwright-report*/**', '**/premium-site/**'],
       },
     },
     optimizeDeps: {

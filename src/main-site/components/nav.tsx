@@ -89,7 +89,7 @@ export function Header({ workspace = false, focused = false }: { workspace?: boo
 
   if (focused) {
     return (
-      <header className="sticky top-0 z-40 glass-nav glass-nav-top border-b border-app">
+      <header className="marketplace-header sticky top-0 z-40 glass-nav glass-nav-top border-b border-app">
         <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between gap-4 px-4 sm:px-6">
           <Wordmark onClick={() => navigate({ name: 'home' })} />
           <Button variant="ghost" size="sm" onClick={() => navigate({ name: 'dashboard' })}>Back to bookings</Button>
@@ -101,7 +101,7 @@ export function Header({ workspace = false, focused = false }: { workspace?: boo
 
   return (
     <Dialog open={menuOpen} onOpenChange={setMenuOpen}>
-      <header className="sticky top-0 z-40 glass-nav glass-nav-top border-b border-app">
+      <header className="marketplace-header sticky top-0 z-40 glass-nav glass-nav-top border-b border-app">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16 gap-4">
             <Wordmark onClick={() => navigate({ name: 'home' })} />
@@ -264,7 +264,7 @@ export function BottomNav() {
 
   return (
     <>
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 glass-nav glass-nav-bottom border-t border-app pb-[env(safe-area-inset-bottom)]" aria-label="Main">
+      <nav className="marketplace-bottom-nav md:hidden fixed bottom-0 left-0 right-0 z-40 glass-nav glass-nav-bottom border-t border-app pb-[env(safe-area-inset-bottom)]" aria-label="Main">
         <div className="flex items-stretch justify-around h-16">
           {items.map((item) => {
             const Icon = item.icon;
@@ -282,7 +282,7 @@ export function BottomNav() {
               >
                 {active && <span className="absolute top-0 h-0.5 w-8 rounded-full bg-accent" />}
                 <Icon size={20} strokeWidth={active ? 2.4 : 2} />
-                <span className="text-[10px] font-semibold">{item.label}</span>
+                <span className="text-[11px] font-semibold">{item.label}</span>
               </button>
             );
           })}

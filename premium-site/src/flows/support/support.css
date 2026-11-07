@@ -1,0 +1,140 @@
+@layer components {
+  .support-help-page, .support-new-ticket, .support-ticket-detail { display: grid; gap: 25px; }
+  .support-help-search { display: grid; gap: 8px; padding: 22px; border-radius: 20px; background: #edf3ee; }
+  .support-search-box { display: flex; align-items: center; gap: 11px; min-height: 54px; max-width: 760px; padding: 0 15px; border: 1px solid #dfe7df; border-radius: 14px; background: white; }
+  .support-search-box > svg { flex: 0 0 auto; color: var(--muted); }
+  .support-search-box input { flex: 1; width: 100%; min-width: 0; min-height: 50px; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: 16px; }
+  .support-search-box input::placeholder { color: #858c86; }
+  .support-search-box button { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; color: var(--muted); }
+  .support-help-search > p { color: var(--muted); font-size: 12px; }
+  .support-help-topics, .support-help-articles, .support-tickets-section { display: grid; gap: 13px; }
+  .support-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+  .support-section-heading h2 { font-size: 20px; }
+  .support-section-heading > span { color: var(--muted); font-size: 12px; }
+  .support-section-heading p { margin-top: 5px; color: var(--muted); font-size: 12px; }
+  .support-topic-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 11px; }
+  .support-topic-card { display: flex; align-items: center; gap: 11px; min-height: 70px; padding: 14px; }
+  .support-topic-card > span { display: grid; place-items: center; flex: 0 0 38px; width: 38px; height: 38px; border-radius: 12px; background: #eff5f0; color: var(--accent); }
+  .support-topic-card strong { flex: 1; font-size: 13px; font-weight: 580; }
+  .support-topic-card > svg { color: #9aa39c; }
+  .support-article { border-bottom: 1px solid var(--line); }
+  .support-article summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 68px; cursor: pointer; list-style: none; }
+  .support-article summary::-webkit-details-marker { display: none; }
+  .support-article summary > span { display: grid; gap: 4px; }
+  .support-article summary small { color: var(--muted); font-size: 10px; }
+  .support-article summary strong { font-size: 14px; font-weight: 570; }
+  .support-article summary > svg { color: var(--muted); transition: rotate .25s var(--ease); }
+  .support-article[open] summary > svg { rotate: 90deg; }
+  .support-article > p { max-width: 750px; padding: 0 38px 17px 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+  .support-no-results { color: var(--muted); font-size: 13px; }
+  .support-tickets-section .secondary-button { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding-inline: 13px; white-space: nowrap; }
+  .support-ticket-list { display: grid; gap: 9px; }
+  .support-ticket-row { display: flex; align-items: center; gap: 12px; min-height: 68px; padding: 12px 14px; }
+  .support-ticket-mark { display: grid; place-items: center; flex: 0 0 38px; width: 38px; height: 38px; border-radius: 12px; background: #eff5f0; color: var(--accent); }
+  .support-ticket-copy { display: grid; flex: 1; min-width: 0; gap: 4px; }
+  .support-ticket-copy strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; }
+  .support-ticket-copy small { color: var(--muted); font-size: 10px; }
+  .support-ticket-row > svg { color: #9da69f; }
+  .support-contact-panel { display: grid; grid-template-columns: auto minmax(0, 1fr) minmax(220px, .7fr); align-items: center; gap: 17px; padding: 21px; border-radius: 17px; background: #f3f6f3; }
+  .support-contact-icon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 14px; background: white; color: var(--accent); }
+  .support-contact-panel h2 { font-size: 17px; }
+  .support-contact-panel p { margin-top: 5px; color: var(--muted); font-size: 12px; }
+  .support-contact-link { display: inline-flex; align-items: center; gap: 6px; min-height: 38px; color: var(--accent); font-size: 12px; font-weight: 600; }
+  .support-emergency { display: flex; gap: 10px; padding-left: 17px; border-left: 1px solid #dce5dc; }
+  .support-emergency > svg { flex: 0 0 auto; margin-top: 3px; color: #916039; }
+  .support-emergency p { margin: 0; font-size: 11px; line-height: 1.6; }
+  .support-emergency strong { color: var(--ink); }
+  .support-auth { display: grid; justify-items: start; gap: 12px; max-width: 430px; margin: 28px auto; padding: 27px; border: 1px solid var(--line); border-radius: 18px; }
+  .support-auth > svg { color: var(--accent); }
+  .support-auth h2 { font-size: 22px; }
+  .support-auth p { color: var(--muted); }
+  .support-auth .primary-button { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 16px; }
+  .support-form-card { display: grid; gap: 17px; padding: 23px; }
+  .support-form-card .control { min-height: 46px; font-size: 16px; }
+  .support-textarea { min-height: 130px; padding: 12px; resize: vertical; font-size: 16px !important; }
+  .support-file-picker { position: relative; display: flex; align-items: center; gap: 9px; min-height: 48px; overflow: hidden; padding: 0 13px; border: 1px dashed #cbd6cc; border-radius: 11px; color: var(--accent); cursor: pointer; font-size: 12px; }
+  .support-file-picker input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+  .support-form-card > .primary-button { display: inline-flex; justify-self: start; align-items: center; gap: 8px; min-height: 46px; padding-inline: 17px; }
+  .support-new-ticket { max-width: 760px; margin-inline: auto; }
+  .support-ticket-detail { max-width: 850px; margin-inline: auto; }
+  .support-ticket-summary { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 17px; }
+  .support-ticket-summary > div { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .support-ticket-summary > div > span:last-child { min-width: 0; }
+  .support-ticket-summary small { color: var(--muted); font-size: 10px; }
+  .support-ticket-summary h2 { overflow: hidden; margin-top: 3px; text-overflow: ellipsis; white-space: nowrap; font-size: 16px; }
+  .support-conversation { display: grid; gap: 17px; padding: 21px; }
+  .support-conversation .support-section-heading > span { font-size: 10px; }
+  .support-conversation-list { display: grid; gap: 20px; margin: 0; padding: 0; list-style: none; }
+  .support-conversation-list li { display: grid; grid-template-columns: 35px minmax(0, 1fr); align-items: start; gap: 10px; }
+  .support-message-avatar { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: #eff5f0; color: var(--accent); font-size: 9px; font-weight: 650; }
+  .support-conversation-list .from-member .support-message-avatar { background: #f1f2f0; color: #606861; }
+  .support-conversation-list li > div { min-width: 0; }
+  .support-message-header { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+  .support-message-header strong { font-size: 12px; }
+  .support-message-header time { color: var(--muted); font-size: 10px; }
+  .support-conversation-list li p { margin-top: 5px; color: #4e5750; font-size: 13px; line-height: 1.65; overflow-wrap: anywhere; }
+  .support-reply-box { display: grid; gap: 12px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .support-reply-box .control { min-height: 110px; }
+  .support-reply-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .support-reply-actions > span { color: var(--muted); font-size: 10px; }
+  .support-reply-actions .primary-button { display: inline-flex; align-items: center; gap: 7px; min-height: 43px; padding-inline: 13px; }
+  .support-resolved-note { display: flex; align-items: center; gap: 8px; padding: 13px; border-radius: 11px; background: #f1f7f2; color: #315d42; font-size: 12px; }
+  .support-resolve { justify-self: start; min-height: 42px; padding-inline: 13px; }
+  .support-guidelines-layout, .support-legal-layout { display: grid; gap: 23px; }
+  .support-guidelines-nav, .support-legal-nav { display: flex; gap: 7px; overflow-x: auto; padding-bottom: 3px; scrollbar-width: none; }
+  .support-guidelines-nav::-webkit-scrollbar, .support-legal-nav::-webkit-scrollbar { display: none; }
+  .support-guidelines-nav a, .support-legal-nav a { flex: 0 0 auto; display: inline-flex; align-items: center; min-height: 40px; padding: 0 13px; border: 1px solid var(--line); border-radius: 22px; color: var(--muted); font-size: 11px; }
+  .support-guidelines-content { display: grid; gap: 13px; }
+  .support-guidelines-intro { display: flex; align-items: center; gap: 13px; margin-bottom: 4px; }
+  .support-guidelines-intro p { max-width: 690px; color: var(--muted); font-size: 13px; line-height: 1.65; }
+  .support-legal-mark { display: grid; place-items: center; flex: 0 0 43px; width: 43px; height: 43px; border-radius: 14px; background: #eff5f0; color: var(--accent); }
+  .support-guideline-card { display: flex; align-items: flex-start; gap: 14px; padding: 19px; scroll-margin-top: 24px; }
+  .support-guideline-card > span { display: grid; place-items: center; flex: 0 0 38px; height: 38px; border-radius: 12px; background: #f3f6f3; color: var(--accent); }
+  .support-guideline-card h2 { font-size: 16px; }
+  .support-guideline-card p { margin-top: 6px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+  .support-guidelines-help { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 18px 4px; }
+  .support-guidelines-help p { color: var(--muted); font-size: 13px; }
+  .support-guidelines-help .secondary-button { display: inline-flex; align-items: center; gap: 7px; min-height: 42px; padding-inline: 13px; }
+  .support-legal-document { display: grid; gap: 20px; max-width: 68ch; }
+  .support-legal-note { display: flex; align-items: center; gap: 9px; padding: 12px 14px; border-radius: 12px; background: #f5f7f5; color: #5b655d; font-size: 11px; }
+  .support-legal-note > svg { color: var(--accent); }
+  .support-legal-updated { color: var(--muted); font-size: 11px; }
+  .support-legal-document > section { scroll-margin-top: 24px; }
+  .support-legal-document h2 { margin-bottom: 8px; font-size: 18px; }
+  .support-legal-document section p { color: #545d56; font-size: 14px; line-height: 1.82; }
+}
+@media (min-width: 1024px) {
+  .support-guidelines-layout, .support-legal-layout { grid-template-columns: 205px minmax(0, 1fr); align-items: start; }
+  .support-guidelines-nav, .support-legal-nav { position: sticky; top: 24px; display: grid; overflow: visible; }
+  .support-guidelines-nav a, .support-legal-nav a { min-height: 42px; border: 0; border-radius: 9px; }
+  .support-guidelines-nav a:hover, .support-legal-nav a:hover { background: #f3f6f3; color: var(--accent); }
+  .support-legal-nav { gap: 2px; }
+  .support-legal-nav strong { margin: 4px 12px 8px; font-size: 12px; }
+}
+@media (max-width: 767px) {
+  .support-topic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .support-contact-panel { grid-template-columns: auto minmax(0, 1fr); }
+  .support-emergency { grid-column: 1 / -1; padding: 12px 0 0; border-top: 1px solid #dce5dc; border-left: 0; }
+  .support-ticket-row .pill { font-size: 10px; }
+}
+@media (max-width: 480px) {
+  .support-help-search { padding: 16px; }
+  .support-search-box { min-height: 50px; padding-inline: 11px; }
+  .support-topic-grid { grid-template-columns: 1fr; }
+  .support-topic-card { min-height: 60px; }
+  .support-section-heading h2 { font-size: 18px; }
+  .support-ticket-row { gap: 8px; padding-inline: 10px; }
+  .support-ticket-mark { flex-basis: 33px; width: 33px; height: 33px; }
+  .support-ticket-copy strong { font-size: 11px; }
+  .support-ticket-copy small { font-size: 9px; }
+  .support-ticket-row .pill { max-width: 82px; font-size: 9px; }
+  .support-contact-panel { padding: 16px; }
+  .support-form-card, .support-conversation { padding: 17px; }
+  .support-ticket-summary { align-items: flex-start; flex-direction: column; }
+  .support-ticket-summary h2 { white-space: normal; }
+  .support-message-header { align-items: flex-start; flex-direction: column; gap: 1px; }
+  .support-guidelines-intro { align-items: flex-start; }
+  .support-guideline-card { padding: 16px; }
+  .support-guidelines-help { align-items: flex-start; flex-direction: column; }
+  .support-reply-actions { align-items: flex-start; flex-direction: column; }
+}

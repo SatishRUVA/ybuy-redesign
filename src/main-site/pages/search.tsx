@@ -415,7 +415,7 @@ export function SearchPage({
                 onClick={() => isMobileFilters ? setMobileFiltersOpen(true) : setShowFilters(!showFilters)}
                 aria-expanded={isMobileFilters ? mobileFiltersOpen : showFilters}
                 aria-haspopup={isMobileFilters ? 'dialog' : undefined}
-                className={`shrink-0 inline-flex items-center gap-1.5 h-9 px-3.5 rounded-full border text-sm font-semibold transition-colors duration-fast ${
+                className={`shrink-0 inline-flex min-h-11 items-center gap-1.5 px-3.5 rounded-full border text-sm font-semibold transition-colors duration-fast ${
                   showFilters || activeFilterCount > 0
                     ? 'border-accent bg-accent-soft text-accent'
                     : 'border-app bg-card text-main hover:bg-subtle'
@@ -434,7 +434,7 @@ export function SearchPage({
                 id="sort-by"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-                className="shrink-0 h-9 px-3 rounded-full border border-app bg-card text-sm font-semibold text-main cursor-pointer"
+                className="shrink-0 min-h-11 px-3 rounded-full border border-app bg-card text-sm font-semibold text-main cursor-pointer"
               >
                 <option value="recommended">Recommended</option>
                 <option value="newest">Newest</option>
@@ -447,19 +447,19 @@ export function SearchPage({
                 <button
                   key={chip.key}
                   onClick={chip.clear}
-                  className="shrink-0 inline-flex items-center gap-1.5 h-9 px-3 rounded-full bg-subtle text-sm font-medium text-sec hover:text-main transition-colors duration-fast"
+                  className="shrink-0 inline-flex min-h-11 items-center gap-1.5 px-3 rounded-full bg-subtle text-sm font-medium text-sec hover:text-main transition-colors duration-fast"
                 >
                   {chip.label}
                   <X size={13} />
                 </button>
               ))}
               {appliedChips.length > 1 && (
-                <button onClick={clearAllFilters} className="shrink-0 h-9 px-2 text-sm font-semibold text-accent">
+                <button onClick={clearAllFilters} className="shrink-0 min-h-11 px-2 text-sm font-semibold text-accent">
                   Clear all
                 </button>
               )}
             </div>
-            <div className="flex items-center gap-0.5 p-0.5 rounded-full bg-subtle shrink-0" role="group" aria-label="Result view">
+            <div className="flex items-center gap-1 p-0.5 rounded-full bg-subtle shrink-0" role="group" aria-label="Result view">
               {([['list', List, 'List'], ['map', MapIcon, 'Map']] as const).map(([value, Icon, label]) => (
                 <button
                   key={value}
@@ -467,7 +467,7 @@ export function SearchPage({
                   aria-pressed={view === value}
                   aria-label={`${label} view`}
                   title={`${label} view`}
-                  className={`inline-flex items-center gap-1.5 h-8 px-2.5 sm:px-3 rounded-full text-xs font-semibold transition-colors duration-fast ${
+                  className={`inline-flex min-h-11 items-center gap-1.5 px-2.5 sm:px-3 rounded-full text-xs font-semibold transition-colors duration-fast ${
                     view === value ? 'bg-card text-main shadow-xs' : 'text-sec'
                   }`}
                 >

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import {
   ArrowRight, Calendar, CheckCircle2, Compass, CreditCard,
-  PackageCheck, ShieldCheck, Sparkles, Clock, LayoutGrid, PackageSearch,
+  PackageCheck, Sparkles, Clock, LayoutGrid, PackageSearch,
 } from 'lucide-react';
 import { SearchBar } from '@/main-site/components/search';
 import { ListingCard } from '@/main-site/components/listing-card';
@@ -20,12 +20,12 @@ import {
 import { fetchFavoriteListingIds, addFavorite, removeFavorite } from '@/lib/favorites';
 import { haversineMiles, listingIsInCity, locationLabel } from '@/lib/geo';
 import { useMarketplaceLocation } from '@/location-context';
-import { SHOW_HERO_CATEGORY_PILLS } from '@/lib/feature-flags';
 import { BrandLogo } from '@/main-site/components/brand-logo';
 import { useFeatureFlag } from '@/lib/use-feature-flags';
 import { savedSearchState, type SearchRadius } from '@/lib/search-state';
 import { useUtcDay } from '@/lib/use-utc-day';
 import { fetchNearbyRequests, type MainItemRequest } from '../request-flow';
+import './home.css';
 
 /** Size of the single pool the home rails are sliced from - one request, not one per section. */
 const POOL_SIZE = 24;
@@ -175,7 +175,7 @@ export function HomePage() {
   });
 
   return (
-    <div className="animate-fade-in">
+    <div className="home-page animate-fade-in">
       <Hero
         onSearch={navigate}
         categories={categories.slice(0, 6)}
@@ -192,65 +192,11 @@ export function HomePage() {
         </div>
       )}
 
-      {/* Categories */}
-      <Shell className="pt-10 sm:pt-14">
-        <section aria-labelledby="browse-categories-heading">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
-            <div>
-              <span aria-hidden="true" className="block h-0.5 w-10 bg-accent mb-3" />
-              <h2 id="browse-categories-heading" className="text-2xl sm:text-3xl font-bold text-main">
-                Browse by category
-              </h2>
-              <p className="text-sm text-sec mt-2">For the project, the weekend, and everything in between.</p>
-            </div>
-            <button
-              type="button"
-              onClick={() => navigate({ name: 'search' })}
-              className="inline-flex items-center self-start sm:self-auto gap-2 min-h-11 text-sm font-semibold text-accent hover:underline underline-offset-4 rounded-card-sm"
-            >
-              Explore all categories <ArrowRight size={18} aria-hidden="true" />
-            </button>
-          </div>
-          <div
-            className="workspace-category-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 xl:grid-cols-9 gap-3 sm:gap-4"
-            aria-busy={loading && categories.length === 0}
-          >
-            {loading && categories.length === 0
-              ? Array.from({ length: 9 }).map((_, i) => (
-                  <div key={i} aria-hidden="true" className="rounded-card-lg border border-app bg-card overflow-hidden">
-                    <div className="skeleton aspect-[6/5] sm:aspect-[5/6]" />
-                    <div className="h-16 flex items-center justify-center">
-                      <div className="skeleton h-4 w-3/4 rounded" />
-                    </div>
-                  </div>
-                ))
-              : (
-                <>
-                  {categories.map((cat) => (
-                    <CategoryTile
-                      key={cat.id}
-                      category={cat}
-                      onClick={() => navigate({ name: 'search', category: cat.id })}
-                    />
-                  ))}
-                  <CategoryMoreTile onClick={() => navigate({ name: 'search' })} />
-                </>
-              )}
-          </div>
-          {loading && categories.length === 0 && <p role="status" className="sr-only">Loading categories</p>}
-          {!loading && categories.length === 0 && (
-            <p role="status" className="mt-4 text-sm text-sec">
-              {error ? 'Categories could not be loaded. Please try again above.' : 'No categories are available yet. You can still explore all rentals.'}
-            </p>
-          )}
-        </section>
-      </Shell>
-
-      {/* Featured */}
-      <Shell className="pt-12 sm:pt-16">
+      {/* Start with the inventory; category browsing follows the first listings. */}
+      <Shell className="home-featured-section pt-10 sm:pt-14">
         <SectionHeader
-          title="Featured rentals"
-          subtitle="Well-reviewed items from owners with a track record."
+          title="Worth borrowing"
+          subtitle="Good gear, listed by people nearby."
           actionLabel="See all"
           onAction={() => navigate({ name: 'search' })}
           className="mb-5"
@@ -272,6 +218,50 @@ export function HomePage() {
             ))}
           </Rail>
         )}
+      </Shell>
+
+      <Shell className="home-category-section pt-10 sm:pt-14">
+        <section aria-labelledby="browse-categories-heading">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-5">
+            <div>
+              <h2 id="browse-categories-heading" className="text-2xl sm:text-3xl font-bold text-main">
+                Pick a starting point
+              </h2>
+              <p className="text-sm text-sec mt-1">What are you getting into?</p>
+            </div>
+            <button
+              type="button"
+              onClick={() => navigate({ name: 'search' })}
+              className="inline-flex items-center self-start sm:self-auto gap-2 min-h-11 text-sm font-semibold text-accent hover:underline underline-offset-4 rounded-card-sm"
+            >
+              All categories <ArrowRight size={18} aria-hidden="true" />
+            </button>
+          </div>
+          <div className="home-category-grid" aria-busy={loading && categories.length === 0}>
+            {loading && categories.length === 0
+              ? Array.from({ length: 6 }).map((_, i) => (
+                  <div key={i} aria-hidden="true" className="home-category-skeleton skeleton" />
+                ))
+              : (
+                <>
+                  {categories.map((cat) => (
+                    <CategoryTile
+                      key={cat.id}
+                      category={cat}
+                      onClick={() => navigate({ name: 'search', category: cat.id })}
+                    />
+                  ))}
+                  <CategoryMoreTile onClick={() => navigate({ name: 'search' })} />
+                </>
+              )}
+          </div>
+          {loading && categories.length === 0 && <p role="status" className="sr-only">Loading categories</p>}
+          {!loading && categories.length === 0 && (
+            <p role="status" className="mt-4 text-sm text-sec">
+              {error ? 'Categories could not be loaded. Please try again above.' : 'No categories are available yet. You can still explore all rentals.'}
+            </p>
+          )}
+        </section>
       </Shell>
 
       {/* A contextual path for shoppers who cannot find a suitable listing. */}
@@ -418,7 +408,7 @@ export function HomePage() {
 }
 
 function Shell({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return <section className={`max-w-[1400px] mx-auto px-4 sm:px-6 ${className}`}>{children}</section>;
+  return <section className={`home-section max-w-[1400px] mx-auto px-4 sm:px-6 ${className}`}>{children}</section>;
 }
 
 /** Horizontal, snap-scrolling on mobile; a plain 4-up grid from `lg`. */
@@ -446,72 +436,47 @@ function Hero({
   return (
     // No `isolate` here: it would cap the search bar's popover z-index, letting the
     // category rail (a later DOM sibling) paint over the date/location dropdowns.
-    <section className="relative">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none"><HeroCarousel /></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/25" />
-
-      <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 pt-14 pb-12 sm:pt-20 sm:pb-16">
-        <div className="max-w-2xl">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[11px] sm:text-xs font-semibold tracking-wide text-white/90 uppercase">
-            <Sparkles size={13} className="text-white" />
-            Trusted local rentals
-          </span>
-          <h1 className="text-[32px] leading-[1.1] sm:text-[48px] font-bold text-white font-display tracking-tight mt-4">
-            What do you need to rent?
-          </h1>
-          <p className="text-white/85 text-sm sm:text-lg mt-3 max-w-xl leading-relaxed">
-            Find tools, cameras, outdoor gear and more from people nearby.
-          </p>
+    <section className="home-hero" aria-label="Find gear to rent nearby">
+      <div className="home-hero__inner">
+        <div className="home-hero__photo" aria-hidden="true">
+          <HeroCarousel />
+          <div className="home-hero__scrim" />
         </div>
 
-        {/* No z-index here: it would cap the search bar's popovers below the shared dim Overlay (z-200). */}
-        <div className="relative mt-7 sm:mt-9 max-w-4xl">
-          <div className="rounded-card-xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)]">
-            <SearchBar
-              variant="hero"
-              defaultValue={searchDraft.q}
-              initialStartDate={searchDraft.start}
-              initialEndDate={searchDraft.end}
-              initialRadius={searchDraft.radius}
-              radius={radius}
-              onRadiusChange={onRadiusChange}
-              onSearch={(p) => onSearch({
-                ...savedSearchState(),
-                name: 'search',
-                q: p.keyword.trim() || undefined,
-                lat: p.location.latitude,
-                lng: p.location.longitude,
-                locationLabel: p.location.source !== 'NONE' ? locationLabel(p.location) : undefined,
-                radius: p.radius,
-                start: p.startDate,
-                end: p.endDate,
-              })}
-            />
-          </div>
-
-          <ul className="flex flex-wrap gap-2 mt-4">
-            <TrustPoint icon={<ShieldCheck size={14} />}>Secure sign-in</TrustPoint>
-            <TrustPoint icon={<CreditCard size={14} />}>Secure checkout</TrustPoint>
-            <TrustPoint icon={<CheckCircle2 size={14} />}>Owner approval before payment</TrustPoint>
-          </ul>
-
-          {categories.length > 0 && SHOW_HERO_CATEGORY_PILLS && (
-            <div className="mt-6">
-              <div className="flex gap-2 overflow-x-auto no-scrollbar -mx-1 px-1 pb-1">
-                {categories.map((cat) => (
-                  <button
-                    key={cat.id}
-                    onClick={() => onSearch({ name: 'search', category: cat.id })}
-                    className="group shrink-0 inline-flex items-center gap-2 min-h-11 px-3.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/25 text-xs sm:text-sm font-medium text-white shadow-sm transition-colors duration-fast"
-                  >
-                    <CategoryIcon category={cat} size={15} />
-                    {cat.name}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
+        <div className="home-hero__copy">
+          <span className="home-hero__eyebrow">The neighborhood gear exchange</span>
+          <h1>Make the plan.<br />Borrow the gear.</h1>
+          <p>Tools, tents, cameras and more—ready when you are, right around the corner.</p>
         </div>
+      </div>
+
+      <div className="home-hero__search">
+        <div className="home-hero__search-control">
+          <SearchBar
+            variant="hero"
+            defaultValue={searchDraft.q}
+            initialStartDate={searchDraft.start}
+            initialEndDate={searchDraft.end}
+            initialRadius={searchDraft.radius}
+            radius={radius}
+            onRadiusChange={onRadiusChange}
+            onSearch={(p) => onSearch({
+              ...savedSearchState(),
+              name: 'search',
+              q: p.keyword.trim() || undefined,
+              lat: p.location.latitude,
+              lng: p.location.longitude,
+              locationLabel: p.location.source !== 'NONE' ? locationLabel(p.location) : undefined,
+              radius: p.radius,
+              start: p.startDate,
+              end: p.endDate,
+            })}
+          />
+        </div>
+        <ul className="home-hero__trust">
+          <TrustPoint icon={<CreditCard size={14} />}>Secure checkout</TrustPoint>
+          <TrustPoint icon={<CheckCircle2 size={14} />}>Owner approval</TrustPoint>
+        </ul>
       </div>
     </section>
   );
@@ -524,14 +489,14 @@ function formatRequestDates(start: string, end: string) {
 
 function TrustPoint({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) {
   return (
-    <li className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs sm:text-sm font-medium text-white/90">
-      <span className="text-white shrink-0">{icon}</span>
+    <li className="home-hero__trust-point">
+      <span aria-hidden="true">{icon}</span>
       {children}
     </li>
   );
 }
 
-const CATEGORY_CARD_CLASS = 'group min-w-0 flex flex-col rounded-card-lg border border-app bg-card shadow-xs hover:shadow-hover hover:border-strong motion-safe:hover:-translate-y-0.5 transition-[transform,box-shadow,border-color] duration-standard';
+const CATEGORY_CARD_CLASS = 'home-category-tile group';
 
 function CategoryTile({ category, onClick }: { category: Category; onClick: () => void }) {
   const [failedImage, setFailedImage] = useState<string | null>(null);
@@ -539,7 +504,7 @@ function CategoryTile({ category, onClick }: { category: Category; onClick: () =
 
   return (
     <button type="button" onClick={onClick} className={CATEGORY_CARD_CLASS}>
-      <span className="relative block w-full aspect-[6/5] sm:aspect-[5/6] rounded-t-[inherit] overflow-hidden bg-subtle">
+      <span className="home-category-tile__image">
         {hasImage ? (
           <>
             <img
@@ -552,19 +517,13 @@ function CategoryTile({ category, onClick }: { category: Category; onClick: () =
               onError={() => setFailedImage(category.image)}
               className="absolute inset-0 w-full h-full object-cover zoom-media"
             />
-            <span className="absolute bottom-2 left-2 grid place-items-center w-9 h-9 rounded-card bg-card text-accent shadow-xs">
-              <CategoryIcon category={category} size={20} />
-            </span>
           </>
         ) : (
-          <span aria-hidden="true" className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-accent">
-            <CategoryIcon category={category} size={32} />
-            {failedImage === category.image && <span className="text-xs text-sec">Photo unavailable</span>}
+          <span aria-hidden="true" className="home-category-tile__fallback">
+            <CategoryIcon category={category} size={34} />
           </span>
         )}
-      </span>
-      <span className="flex items-center justify-center flex-1 w-full min-h-16 px-2 py-3 text-sm font-semibold text-main leading-snug [overflow-wrap:anywhere]">
-        {category.name}
+        <span className="home-category-tile__label">{category.name}</span>
       </span>
     </button>
   );
@@ -572,12 +531,10 @@ function CategoryTile({ category, onClick }: { category: Category; onClick: () =
 
 function CategoryMoreTile({ onClick }: { onClick: () => void }) {
   return (
-    <button type="button" onClick={onClick} aria-label="More categories" className={CATEGORY_CARD_CLASS}>
-      <span className="grid place-items-center w-full aspect-[6/5] sm:aspect-[5/6] rounded-t-[inherit] bg-accent-soft text-accent">
+    <button type="button" onClick={onClick} aria-label="More categories" className={`${CATEGORY_CARD_CLASS} home-category-tile--more`}>
+      <span className="home-category-tile__image">
         <LayoutGrid size={36} strokeWidth={1.5} aria-hidden="true" />
-      </span>
-      <span className="flex items-center justify-center gap-2 flex-1 w-full min-h-16 px-2 py-3 text-sm font-semibold text-accent">
-        More <ArrowRight size={16} aria-hidden="true" />
+        <span className="home-category-tile__label">See all</span>
       </span>
     </button>
   );

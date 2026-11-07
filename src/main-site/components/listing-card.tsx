@@ -16,7 +16,7 @@ function FavoriteButton({
       onClick={(e) => { e.stopPropagation(); setPopKey((k) => k + 1); onToggle(); }}
       aria-label={liked ? 'Remove from favorites' : 'Save to favorites'}
       aria-pressed={liked}
-      className={`grid place-items-center w-9 h-9 rounded-full bg-white/90 backdrop-blur-sm shadow-xs transition-colors duration-fast ease-out hover:bg-white ${className}`}
+      className={`grid place-items-center w-11 h-11 rounded-full bg-white/90 backdrop-blur-sm shadow-xs transition-colors duration-fast ease-out hover:bg-white ${className}`}
     >
       <Heart
         key={popKey}
